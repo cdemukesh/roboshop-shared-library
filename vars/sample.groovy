@@ -1,6 +1,6 @@
 // Declaring a function info
 
-def info(message "Hello") {
+def info(message) {
     echo "Hi, I am a function who's name is info"
     echo "I am printing the value of message is ${message}"
 }
