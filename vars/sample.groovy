@@ -6,4 +6,4 @@ def info(message) {
 }
 
 // Calling the function info
-info("ValueOfMessage")
+//info("ValueOfMessage")
