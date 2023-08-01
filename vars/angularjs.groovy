@@ -15,9 +15,9 @@ def call() {
                     }
                 }
             }                                                                
-            stage('Code Compile') {
+            stage('Code Quality Analysis') {
                 steps {
-                    // sh "npm install"
+                    sh "echo Code Quality Analysis Is In Place."
                 }
             }
         }                                                                   // End of the stages
