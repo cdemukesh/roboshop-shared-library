@@ -1,8 +1,8 @@
 def lintChecks() {
     sh '''
-        sh "echo Installing JSLint"
-        sh "npm i jslint"
-        sh "/home/centos/node_modules/jslint/bin/jslint.js server.js || true"
+        echo Installing JSLint
+        npm i jslint
+        /home/centos/node_modules/jslint/bin/jslint.js server.js || true
     '''
 }
 def call() {
