@@ -19,7 +19,7 @@ def call() {
             }                                                                
             stage('Code Compile') {
                 steps {
-                    // sh "npm install"
+                     sh "npm install"
                 }
             }
         }                                                                   // End of the stages
