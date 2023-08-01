@@ -1,8 +1,9 @@
 def lintChecks() {
     sh '''
-        echo Installing JSLint
+        echo Installing JSLint for ${COMPONENT}
         npm i jslint
         /home/centos/node_modules/jslint/bin/jslint.js server.js || true
+        echo Lint Check Completed for ${COMPONENT}
     '''
 }
 def call() {
