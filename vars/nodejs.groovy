@@ -5,7 +5,7 @@ def lintChecks() {
         sh "/home/centos/node_modules/jslint/bin/jslint.js server.js || true"
     '''
 }
-def call(){
+def call() {
     pipeline {
         agent { label 'WS' }
         stages {
