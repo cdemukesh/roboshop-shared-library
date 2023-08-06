@@ -6,6 +6,15 @@ def lintChecks() {
         echo Lint Check Completed for ${COMPONENT}
     '''
 }
+
+def sonarChecks() {
+    sh '''
+        echo Sonar Checks In Progress
+        sonar-scanner -Dsonar.projectKey=${COMPONENT}  -Dsonar.sources=. -Dsonar.login=c83e5f2df3ea9ac79a5029df5f37d7177535df6a -Dsonar.host.url=http://172.31.90.194:9000
+        echo Sonar Checks Completed
+    '''
+}
+
 def call() {
     pipeline {
         agent { label 'WS' }
@@ -20,6 +29,14 @@ def call() {
             stage('Code Compile') {
                 steps {
                     sh "npm install"
+                }
+            }
+
+            stage('Sonar Checks') {
+                steps {
+                    script {
+                        sonarChecks()
+                    }
                 }
             }
         }                                                                   // End of the stages
