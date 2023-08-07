@@ -28,6 +28,11 @@ def call() {
                      }
                 }
             }
+            stage('Testing') {
+                steps {
+                     sh "echo Testing"
+                }
+            }
         }                                                                   // End of the stages
     }
 }
