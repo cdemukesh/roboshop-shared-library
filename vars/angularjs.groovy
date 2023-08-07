@@ -15,9 +15,13 @@ def call() {
                     }
                 }
             }                                                                
+            
             stage('Code Quality Analysis') {
-                steps {
-                    sh "echo Code Quality Analysis Is In Place."
+                steps {                
+                    script {
+                        env.ARGS="-Dsonar.sources=."              
+                        common.sonarChecks()
+                    }
                 }
             }
         }                                                                   // End of the stages
